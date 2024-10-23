@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="./InvoiceGenerator/Assets/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Invoice Generator</h2>
+
+      <form id="invoiceform">
+        <label for="cus_name">Customer Name</label>
+        <input type="text" placeholder="Ex:Rahul" id="cus_name" />
+
+        <label for="invoice_date">Invoice Date</label>
+        <input type="date" placeholder="10/5/2024" id="invoice_date" />
+
+        <div id="items">
+          <div class="item">
+            <input
+              type="text"
+              placeholder="item name"
+              class="Item_name"
+              required
+            />
+            <input type="number" placeholder="quantity" class="quan" required />
+            <input type="number" placeholder="price" class="price" required />
+          </div>
+        </div>
+        
+        <button id="add_item" type="button">Add Item</button>
+        <button type="submit">Generate Invoice</button>
+        <button id="generate_pdf">Generate PDF</button>
+      </form>
+
+      <div id="invoice_output" style="display: none">
+        <h3 id="Customer"></h3>
+        <h3 id="inv_date"></h3>
+
+        <table id="invoicetable">
+          <thead>
+            <tr>
+              <td>Item Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+              <td>Total</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <h3>Total Amount: <span id="totalAmount"></span></h3>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./InvoiceGenerator/Assets/js/script.js"></script>
+  </body>
+</html>
